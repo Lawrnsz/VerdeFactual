@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  
+  body {
+    background-image: url('https://plus.unsplash.com/premium_photo-1666666222364-7479e7347833?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* floresta */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card {
+    background-color: #dcd0d0;
+    padding: 30px;
+    border-radius: 3px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.53);
+  }
+  
+  .card h1 {
+    color: #004d00;
+    margin-bottom: 25px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .senha {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #67AC56 37.5%, rgba(42, 70, 35, 0.88) 100%);
+    color: white;
+    font-weight: bold;
+    outline: none;
+  }
+  
+  .senha::placeholder {
+    color: white;
+  }
+
+  .email {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #67AC56 37.5%, rgba(42, 70, 35, 0.88) 100%);
+    color: white;
+    font-weight: bold;
+    outline: none;
+  }
+  
+  .email::placeholder {
+    color: white;
+  }
+  
+  .esqueceu {
+    color: #004d00;
+    margin: 10px 0;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .cadastre {
+    color: #004d00;
+    margin: 10px 0;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #67AC56 37.5%, rgba(42, 70, 35, 0.88) 100%);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .button:hover {
+    background: linear-gradient(to right, #56ab2f, rgba(42, 70, 35, 0.88) 100%);
+  }
+  
+  .linha-com-texto {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #004d00;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .linha-com-texto::before,
+  .linha-com-texto::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid black;
+    margin: 0 10px;
+  }
+  
