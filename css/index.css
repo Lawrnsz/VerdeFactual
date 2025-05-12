@@ -143,7 +143,7 @@ li {
     font-weight: var(--weight-semibold);
     line-height: 1.2;
     overflow-x: hidden;
-    height: 5000px; 
+    
   }
 
   .w-100{
@@ -245,23 +245,41 @@ padding: 15px 30px;
   justify-content: center;
   padding: 6px 14px;
   border: 3px solid transparent;
-  border-image: var(--gradiente-azul) 1;
+  border-color: var(--Branco) 1;
   background-color: transparent;
-  color: var(--Branco);
+  border-radius: 40px;
   font-weight: var(--weight-semibold);
   font-size: var(--fs-f8);
   text-decoration: none;
   white-space: nowrap;
 }
 
-/* Botão de busca com ícone */
+/* Estilo do input */
+.navbar-link.pergunta input[type="search"] {
+  background: transparent;
+  border: none;
+  outline: none;
+  color:var(--Branco); /* texto branco */
+  font-size: 16px;
+  padding: 8px;
+  width: 100%;
+}
+
+/* Placeholder branco */
+.navbar-link.pergunta input::placeholder {
+  color: var(--Branco);
+}
+
+/* Estilo do botão */
 .search-btn {
   background: none;
   border: none;
-  font-size: var(--fs-f8);
   color: var(--Branco);
+  font-size: 22px;
+  cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 /* Botão Logar */
@@ -270,17 +288,18 @@ padding: 15px 30px;
   align-items: center;
   justify-content: center;
   padding: 8px 16px;
-  background-color: var(--Azul-ceu);
+  background-color: rgba(13, 95, 13, 0.281);
   color: var(--Branco);
   border: none;
   font-weight: var(--weight-semibold);
   text-decoration: none;
   font-size: var(--fs-f8);
+  border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-  background-color:var(--Azul-noite);
+  background-color: var(--Verde-mato);
 }
 
 /*BANNER PRINCIPAL*/
@@ -414,12 +433,12 @@ padding: 15px 30px;
   padding: 50px 20px;
 }
 
-/* === NOTÍCIAS PRINCIPAIS === */
+/* === NOTÍCIAS PRINCIPAIS E REGIÕES === */
 .noticias-e-regioes {
   display: flex;
   justify-content: center;  /* Centraliza horizontalmente */
   align-items: flex-start;
-  gap: 50px;
+  gap: 100px;
   max-width: 1200px;         /* Limita a largura */
   margin: 0 auto;            /* Centraliza o container na tela */
   padding: 20px;
@@ -433,9 +452,9 @@ padding: 15px 30px;
 
 /* Cada notícia em si */
 .bloco-noticia {
-  width: 280px;
+  width: 360px;
   background-color: var(--Branco);
-  border-radius: 10px;
+  border-radius: 15px;
   overflow: hidden;
   box-shadow: var(--shadow-1);
   display: flex;
@@ -447,7 +466,7 @@ padding: 15px 30px;
 .noticia-imagem {
   position: relative;
   width: 100%;
-  height: 180px;
+  height: 300px;
   overflow: hidden;
 }
 
@@ -465,43 +484,50 @@ padding: 15px 30px;
   left: 10px;
   margin: 0;
   color:var(--Branco);
-  font-size: 1.2rem;
+  font-size: var(--fs-4);
   font-family: var(--ff-MontaguSlab);
   text-shadow:var(--shadow-2);
 }
 
 /* Descrição da notícia */
 .noticia-descricao {
-  padding: 12px;
+  padding: 30px;
   font-family:var(--ff-Montserrat);
   font-weight: var(--weight-regular);
-  font-size: var(--fs-7);
+  font-size: var(--fs-f8);
   background-color: var(--Verde-floresta);
   color: var(--Branco);
-  flex-grow: 1; /* preenche igualmente */
+  flex-grow: 1; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 400px;
+
 }
 
 /* Botão da notícia */
 .btn-noticia {
-  margin-top: 10px;
+  margin-top: 20px;
   background-color:var(--Primária);
   border: none;
   color: var(--Branco);
-  padding: 15px 20px;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
+  border-radius: 10px;
+  font-weight: var(--weight-bold);
   transition: background-color 0.3s;
-  align-self: start; /* alinha botão à esquerda */
+  align-self: center; 
   font-family: var(--ff-MontaguSlab);
+  padding-block: 20px 20px;
+  padding-inline: 30px;
+  border-radius: 12px;
+  background-color: var(--Primária); /* substitua por um verde se necessário */
+  box-shadow: var(--shadow-2);
+  z-index: 2;
 }
 
 .btn-noticia:hover {
-  background-color:var(--Verde-folha);
+  background-color:var(--Verde-claro);
 }
+
 
 /* Seção lateral das regiões */
 .sua-regiao {
@@ -518,34 +544,103 @@ padding: 15px 30px;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
 }
 
 .botoes-regiao button {
-  width: 160px;
-  padding: 10px;
-  background-color: var(--Verde-claro);
+  width: 300px;
+  padding: 50px 32px;
+  background: var(--Verde-claro);
   border: none;
   color:var(--Branco);
-  font-weight: bold;
-  font-size: var(--fs-f8);
+  font-weight: var(--weight-semibold);
+  font-size: var(--fs-7);
+  font-family: var(--ff-MontaguSlab);
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-2);
   transition: background-color 0.3s;
+  
 }
 
 .botoes-regiao button:hover {
-  background-color:var(--Verde-lima);
+  background-color:var(--Verde-floresta);
 }
 
-/*SOBRE NÓS E SUA OPINIÃO/
+/*SOBRE NÓS E SUA OPINIÃO*/
 
 
 
+/*FOOTER*/
+footer.footer {
+  background-color: #1c3b1e;
+  color: white;
+  padding: 30px 50px;
+  font-size: 1.1em;
+  margin-top: 20px;
+}
 
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
 
+.footer-container .logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 10px;
+}
 
+.footer-container .logo img {
+  height: 100px;
+}
+
+.footer-container .logo .verde {
+  font-family: var(--ff-InstrumentSans);
+  color: var(--Branco);
+  font-weight: var(--weight-semibold);
+  font-size: var(--fs-3);
+  
+}
+
+.footer-container .logo .factual {
+  color: var(--Branco);
+  font-weight: bold;
+  font-family: var(--ff-Megrim);
+  font-size: var(--fs-3);
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-info h3 {
+  margin-bottom: 10px;
+  font-weight: var(--weight-semibold);
+}
+
+.footer-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-info ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: var(--weight-regular);
+}
+
+.footer-info ul li a:hover {
+  text-decoration: underline;
+}
 
 /* Isso é só teste de responsividade, ser revisado amanhã em grupo */
 

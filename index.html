@@ -10,7 +10,7 @@
     <title>Verde Factual</title>
 </head>
 <body>
-    <head>
+  <head>
         <!--links-->
         <link rel="stylesheet" href="css/index.css">
     
@@ -42,14 +42,12 @@
             <ul class="navbar-list">
       
               <!-- Item da pergunta + busca -->
-              <li class="navbar-item">
-                <a href="#" class="navbar-link pergunta">
-                  Qual notícia você deseja encontrar hoje?
-                </a>
-                <button class="search-btn" aria-label="Buscar">
+              <form class="navbar-link pergunta" role="search">
+                <input type="search" name="search" placeholder="Buscar" aria-label="Buscar">
+                <button class="search-btn" type="submit" aria-label="Buscar">
                   <ion-icon name="search-outline"></ion-icon>
                 </button>
-              </li>
+              </form>
       
             </ul>
           </nav>
@@ -172,7 +170,29 @@
     
       </div>
     </section>
-    </body>
+
+    
+   
+    <footer class="footer">
+      <div class="footer-container">
+        <a href="#" class="logo">
+          <img src="img/logo.png" alt="Logo Verde Factual">
+          <span class="verde"><strong>Verde</strong></span>
+          <span class="factual">FACTUAL</span>
+        </a>
+        <div class="footer-info">
+          <h3>Informações</h3>
+          <ul>
+            <li><a href="#">Contato</a></li>
+            <li><a href="pp1.html">Política de Privacidade</a></li>
+            <li><a href="#">Idioma</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+</body>
+
+    
 
 <!-- Ícones do Ionicons-->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
