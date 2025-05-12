@@ -1,0 +1,638 @@
+/*-----------RESET----------------*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*----VARIÁVEIS------------*/
+:root{
+    /* === CORES PRINCIPAIS === */
+    --Background:#D3D2D2;
+    --Primária:#224021; /* Verde principal - natureza */
+    --Verde-claro:#76C363; /* Verde mais leve - regiões */
+    --Verde-floresta:#337D1E; /*Verde escuro - fundo de notícia, e titúlos*/
+    --Verde-folha:#67AC56; /* Verde suave - chat*/
+    --Verde-mato: #1F5C23; /* Verde escuro - início do gradiente */
+    --Verde-lima: #61BE6F; /* Verde claro - fim do gradiente */
+    --Verde-musgo-claro:#85BC61; /* Verde suave, inspirado em folhas frescas */
+    --Azul-ceu: #91BED4;  /* Azul suave - inspirado no céu claro */
+    --Azul-noite: #304269;  /* Azul escuro - inspirado no céu noturno */
+
+
+    /* === CORES DE APOIO === */
+    --Preto:#000000;
+    --Branco:#FFFFFF;
+    --Sucess:#1BE071;
+    --Warning:#F47E08;
+    --Danger:#FF0000;
+
+    /* === GRADIENTES === */
+    --gradiente-floresta: linear-gradient(to right, var(--Verde-mato), var(--Verde-lima));
+    --gradiente-nevoa-verde: linear-gradient(to bottom, var(--Background), var(--Verde-musgo-claro));   
+    --gradiente-azul: linear-gradient(to bottom, var(--Azul-noite), var(--Azul-ceu));  
+
+    /* === TIPOGRAFIA ===*/
+    --ff-Montserrat: "Montserrat", sans-serif;
+    --ff-InstrumentSans: "Instrument Sans", sans-serif;
+    --ff-Megrim: "Megrim", system-ui;
+    --ff-MontaguSlab: "Montagu Slab", serif;
+
+    --fs-1: 3.6rem;
+    --fs-2: 2.4rem;
+    --fs-3: 2rem;
+    --fs-4: 1.7rem;
+    --fs-5: 1.6rem;
+    --fs-6: 1.5rem;
+    --fs-7: 1.4rem;
+    --fs-f8: 1.2rem;
+
+    --weight-regular: 400;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+
+    /* === ESPAÇO === */
+    --section-spacing: 60px;
+
+    /* === BODER RADIUS === */
+    --radius-circle: 50%;
+    --radius-5: 5px;
+    --radius-3: 3px;
+
+    /* === SOMBRAS === */
+    --shadow: 0px 2px 5px 0px hsla(0, 0%, 0%, 0.2);
+    --shadow-1: 0px 2px 20px hsla(209, 36%, 72%, 0.2);
+    --shadow-2: 0 4px 16px hsla(0, 0%, 0%, 0.06);
+  
+    /*==== TRANSIÇÃO ====*/
+    --transition-1: 250ms ease;
+    --transition-2: 500ms ease;
+    --cubic-out: cubic-bezier(0.05, 0.83, 0.52, 0.97);
+  
+    /*==== CLIP PATH ====*/
+    --clip-path-1: polygon(0 0, 100% 0, 100% 0, 0 0);
+    --clip-path-2: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    --clip-path-3: polygon(0% 0%, 90% 0, 100% 30%, 100% 100%, 0 100%);
+    --clip-path-4: polygon(90% 0, 100% 40%, 100% 100%, 0 100%, 0 0);
+    --clip-path-5: polygon(100% 0, 100% 100%, 10% 100%, 0 60%, 0 0);
+    --clip-path-6: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 40%);
+    --clip-path-7: polygon(100% 0, 100% 60%, 90% 100%, 0 100%, 0 0);
+    --clip-path-8: polygon(0% 0%, 70% 0, 100% 30%, 100% 100%, 0 100%);
+    --clip-path-9: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+}
+
+li {
+    list-style: none;
+  }
+  
+  a,
+  img,
+  span,
+  input,
+  button,
+  textarea,
+  ion-icon {
+    display: block;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .h1,
+  .h2,
+  .h3 {
+    font-family: var(--ff-InstrumentSans);
+    line-height: 1.2; 
+  }
+  
+  img {
+    height: auto;
+  }
+  
+  input,
+  button,
+  textarea {
+    background: none;
+    border: none;
+    font: inherit; /*herda da div pai*/
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+  }
+  
+  ion-icon {
+    pointer-events: none;
+  }
+  
+  address {
+    font-size: 10px;
+    scroll-behavior: smooth;
+  }
+  
+  body{
+    background-color: var(--Background);
+    color:var(--Branco);
+    font-family: var(--ff-Montserrat);
+    font-size: var(--fs-7);
+    font-weight: var(--weight-semibold);
+    line-height: 1.2;
+    overflow-x: hidden;
+    height: 5000px; 
+  }
+
+  .w-100{
+    width: 100%;
+  }
+
+  /* === CONFIGURAÇÃO DE ROLAGEM === */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track{
+    background-color: var(--Azul-noite);
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background-color: var(--Preto);
+  }
+
+
+  /*CSS REUTILIZÁVEL*/
+  .container{
+    max-width: 1800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /*16*/
+  }
+
+  /* HEADER */
+.header {
+  background-color: var(--Primária);
+  color: var(--Branco);
+}
+
+/* Container flexível */
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Logo e nome */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 80px;
+}
+
+.verde {
+  font-family: var(--ff-InstrumentSans);
+  color: var(--Branco);
+  font-weight: var(--weight-semibold);
+  font-size: var(--fs-3);
+}
+
+.factual {
+  color: var(--Branco);
+  font-weight: bold;
+  font-family: var(--ff-Megrim);
+  font-size: var(--fs-3);
+}
+
+/* Navbar principal */
+.navbar {
+padding: 15px 30px;
+}
+
+.navbar-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Itens da navbar */
+.navbar-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Link da pergunta com borda gradiente */
+.navbar-link.pergunta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  border: 3px solid transparent;
+  border-image: var(--gradiente-azul) 1;
+  background-color: transparent;
+  color: var(--Branco);
+  font-weight: var(--weight-semibold);
+  font-size: var(--fs-f8);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Botão de busca com ícone */
+.search-btn {
+  background: none;
+  border: none;
+  font-size: var(--fs-f8);
+  color: var(--Branco);
+  display: flex;
+  align-items: center;
+}
+
+/* Botão Logar */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  background-color: var(--Azul-ceu);
+  color: var(--Branco);
+  border: none;
+  font-weight: var(--weight-semibold);
+  text-decoration: none;
+  font-size: var(--fs-f8);
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color:var(--Azul-noite);
+}
+
+/*BANNER PRINCIPAL*/
+.banner {
+  background-image: url(../img/amazonia.jpg); /* Substitua pelo caminho correto da imagem */
+  background-size: cover;        /* A imagem cobre toda a área do banner */
+  background-position: center;   /* A imagem fica centralizada */
+  background-repeat: no-repeat;  /* Evita que a imagem se repita */
+  
+  height: 550px; 
+  width: 100%;  
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  justify-content: flex-start;
+  padding-left: 20px;
+  padding-bottom: 10px; 
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.3); /* escurece a imagem */
+  z-index: 1;   
+}
+
+.banner-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.banner-title {
+  font-size: var(--fs-3);
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  color: var(--Branco);
+  font-family: var(--ff-MontaguSlab);
+  box-shadow: var(--shadow-1);
+  line-height: 1.6;
+}
+
+.banner-subtitle {
+  font-size: var(--fs-f8);
+  color: var(--Branco);
+  font-family: var(--ff-Montserrat);
+  font-weight: var(--weight-regular);
+  margin: 0;
+}
+
+/* === MENU PRINCIPAL === */
+
+.menu-principal {
+  padding: 30px 10px;
+}
+
+.menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.menu-nav {
+  display: flex;
+  justify-content: center; /* centraliza os links */
+  gap: 300px;
+}
+
+.menu-nav a {
+  color: var(--Preto);
+  font-family: var(--ff-Montserrat);
+  font-weight: var(--weight-semibold);
+  text-decoration: none;
+  font-size: var(--fs-4);
+  padding: 15px 20px;
+  transition: color 0.3s, border-bottom 0.3s;
+  border-bottom: 2px solid transparent;
+}
+
+.menu-nav a:hover {
+  color: var(--Verde-floresta);
+  border-bottom: 2px solid var(--Verde-floresta);
+}
+
+/* === ÚLTIMAS NOTÍCIAS === */
+
+.ultimas-noticias {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.ultimas-title {
+  font-family: var(--ff-MontaguSlab);
+  font-size: var(--fs-2);
+  font-weight: var(--weight-bold);
+  color: var(--Primária);
+  margin-bottom: 30px;
+}
+  
+.noticia-categorias {
+  display: flex;
+  justify-content: center;
+  gap: 200px; /* Espaçamento horizontal entre os itens */
+  padding: 15px 0;
+}
+
+.categoria {
+  color: var(--Verde-floresta);
+  font-family: var(--ff-Montserrat);
+  font-weight: var(--weight-semibold);
+  font-size: var(--fs-7);
+  padding: 5px 10px;
+  border-bottom: 2px solid transparent;
+  cursor: default;
+  
+}
+
+.categoria:hover {
+  color: var(--Verde-lima);
+  border-bottom: 2px solid var(--Verde-lima);
+}
+
+.ultimas-noticias {
+  padding: 50px 20px;
+}
+
+.ultimas-noticias {
+  padding: 50px 20px;
+}
+
+/* === NOTÍCIAS PRINCIPAIS === */
+.noticias-e-regioes {
+  display: flex;
+  justify-content: center;  /* Centraliza horizontalmente */
+  align-items: flex-start;
+  gap: 50px;
+  max-width: 1200px;         /* Limita a largura */
+  margin: 0 auto;            /* Centraliza o container na tela */
+  padding: 20px;
+}
+
+/* Container das notícias, em linha */
+.bloco-noticias {
+  display: flex;
+  gap: 40px;
+}
+
+/* Cada notícia em si */
+.bloco-noticia {
+  width: 280px;
+  background-color: var(--Branco);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Container da imagem */
+.noticia-imagem {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+/* A imagem */
+.noticia-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Título dentro da imagem */
+.noticia-titulo {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  margin: 0;
+  color:var(--Branco);
+  font-size: 1.2rem;
+  font-family: var(--ff-MontaguSlab);
+  text-shadow:var(--shadow-2);
+}
+
+/* Descrição da notícia */
+.noticia-descricao {
+  padding: 12px;
+  font-family:var(--ff-Montserrat);
+  font-weight: var(--weight-regular);
+  font-size: var(--fs-7);
+  background-color: var(--Verde-floresta);
+  color: var(--Branco);
+  flex-grow: 1; /* preenche igualmente */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Botão da notícia */
+.btn-noticia {
+  margin-top: 10px;
+  background-color:var(--Primária);
+  border: none;
+  color: var(--Branco);
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  align-self: start; /* alinha botão à esquerda */
+  font-family: var(--ff-MontaguSlab);
+}
+
+.btn-noticia:hover {
+  background-color:var(--Verde-folha);
+}
+
+/* Seção lateral das regiões */
+.sua-regiao {
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0;
+}
+
+/* Botões de regiões */
+.botoes-regiao {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.botoes-regiao button {
+  width: 160px;
+  padding: 10px;
+  background-color: var(--Verde-claro);
+  border: none;
+  color:var(--Branco);
+  font-weight: bold;
+  font-size: var(--fs-f8);
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s;
+}
+
+.botoes-regiao button:hover {
+  background-color:var(--Verde-lima);
+}
+
+/*SOBRE NÓS E SUA OPINIÃO/
+
+
+
+
+
+
+
+/* Isso é só teste de responsividade, ser revisado amanhã em grupo */
+
+
+
+
+
+/* Telas menores que 1200px (tablets grandes) */
+@media (max-width: 1200px) {
+  .menu-nav {
+    gap: 150px;
+  }
+
+  .noticias-e-regioes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bloco-noticias {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sua-regiao {
+    margin-top: 30px;
+  }
+}
+
+/* Telas menores que 768px (celulares e tablets pequenos) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .navbar-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .banner {
+    height: auto;
+    padding: 40px 10px;
+    align-items: center;
+  }
+
+  .banner-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .banner-subtitle {
+    text-align: center;
+  }
+
+  .menu-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .noticia-categorias {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .bloco-noticia {
+    width: 90%;
+  }
+
+  .botoes-regiao button {
+    width: 100%;
+  }
+}
+
+/* Telas muito pequenas (até 480px) */
+@media (max-width: 480px) {
+  .logo img {
+    height: 50px;
+  }
+
+  .verde, .factual {
+    font-size: 1.2rem;
+  }
+
+  .btn, .btn-noticia, .navbar-link.pergunta {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
