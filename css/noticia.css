@@ -1,0 +1,109 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.fundo {
+    background: linear-gradient(180deg, #D9D9D9 0%, #85BC61 100%);
+    padding-bottom: 50px;
+}
+
+/* Cabeçalho */
+.noticia {
+    background-color: #0F2E12;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    height: 100px;
+    
+}
+
+.logo {
+    height: 90px;
+}
+
+.hora {
+    font-size: 18px;
+}
+
+.data {
+    font-size: 16px;
+}
+
+/* Conteúdo Principal */
+.conteudo {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Título */
+.title {
+    color: #337D1E;
+    font-family: Montserrat, sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+/* Subtexto */
+.subtexto {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 15px;
+    margin-bottom: 40px;
+    color: #222;
+    font-family: Montserrat, sans-serif;
+}
+
+/* Imagem principal */
+.imgnot {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Seção verde */
+.principal {
+    border-radius: 20px;
+    background: #337D1E;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.74);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 4px
+}
+
+.principal img {
+    border-radius: 15px;
+    height: 30;
+}
+
+.principal h3 {
+    color: white;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 30px;
+}
+
+.principal p {
+    color: #FFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 121.815%; /* 35.326px */
+}

@@ -1,82 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Verde Factual</title>
+  <meta charset="UTF-8">
+  <title>Relógio Funcional</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #d3d3d3;
-      margin: 0;
-      padding: 20px;
       display: flex;
       justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f9f4;
     }
 
-    .container {
-      display: flex;
-      gap: 20px;
+    .clock {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      border: 10px solid #2c3e50;
+      border-radius: 50%;
+      background: white;
     }
 
-    .card {
-      background-color: white;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      border-radius: 10px;
-      overflow: hidden;
-      width: 300px;
-      text-align: center;
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 12px;
+      height: 12px;
+      background: #2c3e50;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
     }
 
-    .image-card {
-      background-image: url('https://via.placeholder.com/300x400'); /* Substitua pela sua imagem */
-      background-size: cover;
-      background-position: center;
-      height: 400px;
+    .hand {
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      transform-origin: bottom center;
+      transform: translateX(-50%) rotate(0deg);
+      background: #2c3e50;
+      border-radius: 2px;
     }
 
-    .text-card {
-      padding: 20px;
-      background-color: #f0f0f0;
-      height: 400px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .hour {
+      width: 8px;
+      height: 60px;
+      z-index: 3;
     }
 
-    .text-card h2 {
-      color: #2e7d32;
-      margin-bottom: 15px;
+    .minute {
+      width: 6px;
+      height: 90px;
+      z-index: 2;
     }
 
-    .text-card p {
-      font-size: 16px;
-      line-height: 1.5;
-      color: #333;
+    .second {
+      width: 2px;
+      height: 110px;
+      background: red;
+      z-index: 1;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="card image-card"></div>
-
-    <div class="card text-card">
-      <h2>Quem Somos?</h2>
-      <p>
-        O Verde Factual é um site dedicado a trazer as principais notícias sobre o meio ambiente no Brasil.
-        Com foco em temas como queimadas, reflorestamento, conservação dos ecossistemas e políticas ambientais,
-        nosso objetivo é manter você informado sobre os desafios e soluções que envolvem a preservação da natureza no país.
-      </p>
-    </div>
-
-    <div class="card text-card">
-      <h2>Sua Opinião</h2>
-      <p>
-        Você pode compartilhar sua opinião sobre temas ambientais importantes, como queimadas, reflorestamento e mudanças climáticas.
-        Acreditamos que todos têm algo valioso a contribuir para a preservação da natureza.
-        Participe, dê sua opinião e ajude a criar um futuro mais sustentável!
-      </p>
-    </div>
+  <div class="clock">
+    <div class="center"></div>
+    <div class="hand hour" id="hour"></div>
+    <div class="hand minute" id="minute"></div>
+    <div class="hand second" id="second"></div>
   </div>
+
+  <script>
+    function atualizarRelogio() {
+      const agora = new Date();
+
+      const segundos = agora.getSeconds();
+      const minutos = agora.getMinutes();
+      const horas = agora.getHours();
+
+      const anguloSegundos = segundos * 6; // 360 / 60
+      const anguloMinutos = minutos * 6 + segundos * 0.1; // inclui segundos
+      const anguloHoras = (horas % 12) * 30 + minutos * 0.5; // 360 / 12
+
+      document.getElementById("second").style.transform = `translateX(-50%) rotate(${anguloSegundos}deg)`;
+      document.getElementById("minute").style.transform = `translateX(-50%) rotate(${anguloMinutos}deg)`;
+      document.getElementById("hour").style.transform = `translateX(-50%) rotate(${anguloHoras}deg)`;
+    }
+
+    // Atualiza o relógio a cada segundo
+    setInterval(atualizarRelogio, 1000);
+
+    // Atualiza assim que a página carregar
+    atualizarRelogio();
+  </script>
 </body>
 </html>
