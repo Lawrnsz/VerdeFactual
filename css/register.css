@@ -36,7 +36,7 @@
     margin: 10px 0;
     border: none;
     border-radius: 30px;
-    background: linear-gradient(90deg, #67AC56 37.5%, rgba(42, 70, 35, 0.88) 100%);
+    background: linear-gradient(90deg, #3e7430 37.5%, rgba(42, 70, 35, 0.88) 100%);
     color: white;
     font-weight: bold;
     outline: none;
@@ -52,7 +52,7 @@
     margin: 10px 0;
     border: none;
     border-radius: 30px;
-    background: linear-gradient(90deg, #67AC56 37.5%, rgba(42, 70, 35, 0.88) 100%);
+    background: linear-gradient(90deg, #3e7430 37.5%, rgba(42, 70, 35, 0.88) 100%);
     color: white;
     font-weight: bold;
     outline: none;
@@ -75,7 +75,7 @@
     padding: 10px;
     border: none;
     border-radius: 30px;
-    background: linear-gradient(90deg, #67AC56 37.5%, rgba(42, 70, 35, 0.88) 100%);
+    background: linear-gradient(to right, #3e7430, rgba(42, 70, 35, 0.88) 100%);
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -83,7 +83,7 @@
   }
   
   .button:hover {
-    background: linear-gradient(to right, #56ab2f, rgba(42, 70, 35, 0.88) 100%);
+    background: linear-gradient(to right, #70cc46, rgba(42, 70, 35, 0.88) 100%);
   }
   
   .linha-com-texto {
