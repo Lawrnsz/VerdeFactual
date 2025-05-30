@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #e2e2e2;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e3926;
+  color: white;
+  padding: 10px 40px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+main {
+  max-width: 1100px;
+  margin: 30px auto;
+  background-color: #e2e2e2;
+  padding: 0 40px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.profile-img {
+  width: 130px;
+  height: 130px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.profile-info h1 {
+  margin: 0;
+  color: #214c34;
+  font-size: 28px;
+}
+
+.profile-info p {
+  margin: 5px 0;
+}
+
+.avatars {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.avatars div {
+  width: 60px;
+  height: 60px;
+  background-color: #ccc;
+  border-radius: 50%;
+  border: 3px solid #214c34;
+}
+
+.section-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.section-button {
+  background: linear-gradient(to right, #69b659, #4e944f);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  width: 200px;
+  cursor: pointer;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  text-align: left;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.comment {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background-color: #d9d9d9;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+}
+
+.comment-img {
+  width: 50px;
+  height: 50px;
+  background-color: #bbb;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.comment-text {
+  font-size: 14px;
+}
+
+.comment-text strong {
+  display: block;
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .profile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .section-button {
+    width: 100%;
+  }
+}

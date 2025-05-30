@@ -1,12 +1,97 @@
-* {
+/*-----------RESET----------------*/
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
-  }
+}
+
+/* ==== VARIÁVEIS ==== */
+:root{
+    /* === CORES PRINCIPAIS === */
+    --Background:#D3D2D2;
+    --Primária:#224021; /* Verde principal - natureza */
+    --Verde-claro:#76C363; /* Verde mais leve - regiões */
+    --Verde-floresta:#337D1E; /*Verde escuro - fundo de notícia, e titúlos*/
+    --Verde-folha:#67AC56; /* Verde suave - chat*/
+    --Verde-mato: #1F5C23; /* Verde escuro - início do gradiente */
+    --Verde-lima: #61BE6F; /* Verde claro - fim do gradiente */
+    --Verde-musgo-claro:#85BC61; /* Verde suave, inspirado em folhas frescas */
+    --Azul-ceu: #91BED4;  /* Azul suave - inspirado no céu claro */
+    --Azul-noite: #304269;  /* Azul escuro - inspirado no céu noturno */
+    --Verde-Mata-Densa: #004d00;
+    --Verde-Fatal:#67AC56; 
+    
+
+
+    /* === CORES DE APOIO === */
+    --Preto:#000000;
+    --Branco:#FFFFFF;
+    --Sucess:#1BE071;
+    --Warning:#F47E08;
+    --Danger:#FF0000;
+
+    /* === GRADIENTES === */
+    --gradiente-floresta: linear-gradient(to right, var(--Verde-mato), var(--Verde-Fatal));
+    --gradiente-nevoa-verde: linear-gradient(to bottom, var(--Background), var(--Verde-musgo-claro));   
+    --gradiente-azul: linear-gradient(to bottom, var(--Azul-noite), var(--Azul-ceu));
+    --gradiente-sertão:  linear-gradient(90deg, #67AC56 37.5%, rgba(42, 70, 35, 0.88) 100%);
+
+
+    /* === TIPOGRAFIA ===*/
+    --ff-Montserrat: "Montserrat", sans-serif;
+    --ff-InstrumentSans: "Instrument Sans", sans-serif;
+    --ff-Megrim: "Megrim", system-ui;
+    --ff-MontaguSlab: "Montagu Slab", serif;
+
+    --fs-1: 3.6rem;
+    --fs-2: 2.4rem;
+    --fs-3: 2rem;
+    --fs-4: 1.7rem;
+    --fs-5: 1.6rem;
+    --fs-6: 1.5rem;
+    --fs-7: 1.4rem;
+    --fs-f8: 1.2rem;
+
+    --weight-regular: 400;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+
+    /* === ESPAÇO === */
+    --section-spacing: 60px;
+
+    /* === BODER RADIUS === */
+    --radius-circle: 50%;
+    --radius-5: 5px;
+    --radius-3: 3px;
+
+    /* === SOMBRAS === */
+    --shadow: 0px 2px 5px 0px hsla(0, 0%, 0%, 0.2);
+    --shadow-1: 0px 2px 20px hsla(209, 36%, 72%, 0.2);
+    --shadow-2: 0 4px 16px hsla(0, 0%, 0%, 0.06);
+    --shadow-3:4px 4px 4px 0px rgba(0, 0, 0, 0.53);
+  
+    /*==== TRANSIÇÃO ====*/
+    --transition-1: 250ms ease;
+    --transition-2: 500ms ease;
+    --cubic-out: cubic-bezier(0.05, 0.83, 0.52, 0.97);
+  
+    /*==== CLIP PATH ====*/
+    --clip-path-1: polygon(0 0, 100% 0, 100% 0, 0 0);
+    --clip-path-2: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    --clip-path-3: polygon(0% 0%, 90% 0, 100% 30%, 100% 100%, 0 100%);
+    --clip-path-4: polygon(90% 0, 100% 40%, 100% 100%, 0 100%, 0 0);
+    --clip-path-5: polygon(100% 0, 100% 100%, 10% 100%, 0 60%, 0 0);
+    --clip-path-6: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 40%);
+    --clip-path-7: polygon(100% 0, 100% 60%, 90% 100%, 0 100%, 0 0);
+    --clip-path-8: polygon(0% 0%, 70% 0, 100% 30%, 100% 100%, 0 100%);
+    --clip-path-9: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+}
+
   
   body {
-    background-image: url('https://plus.unsplash.com/premium_photo-1666666222364-7479e7347833?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* floresta */
+    background-image: url('https://plus.unsplash.com/premium_photo-1666666222364-7479e7347833?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -14,7 +99,7 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .card {
     background-color: #dcd0d0;
     padding: 30px;
@@ -30,20 +115,37 @@
     font-family: 'Montserrat', sans-serif;
   }
   
+  .login {
+    background-color: var(--Branco);
+    padding: 30px;
+    border-radius: 3px;
+    width: 350px;
+    text-align: center;
+    box-shadow:var(--shadow-3);
+  }
+  
+  .login h1 {
+    color: var(--Verde-Mata-Densa);
+    margin-bottom: 25px;
+    font-family: var(--ff-Montserrat);
+  }
+  
   .senha {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
     border: none;
     border-radius: 30px;
-    background: linear-gradient(90deg, #3e7430 37.5%, rgba(42, 70, 35, 0.88) 100%);
-    color: white;
-    font-weight: bold;
+    background-image:var(--gradiente-floresta);
+    color: var(--Branco);
+    font-weight: var(--weight-bold);
+    font-family: var(--ff-InstrumentSans);
     outline: none;
   }
   
   .senha::placeholder {
-    color: white;
+    color: var(--Branco);
+    font-family: var(--ff-InstrumentSans);
   }
 
   .email {
@@ -52,30 +154,33 @@
     margin: 10px 0;
     border: none;
     border-radius: 30px;
-    background: linear-gradient(90deg, #3e7430 37.5%, rgba(42, 70, 35, 0.88) 100%);
-    color: white;
+    background:var(--gradiente-sertão);
+    color:var(--Branco);
     font-weight: bold;
     outline: none;
+    font-family: var(--ff-InstrumentSans);
   }
   
   .email::placeholder {
-    color: white;
+    color: var(--Branco);
   }
   
   .esqueceu {
-    color: #004d00;
+    color: var(--Verde-mato);
     margin: 10px 0;
     display: block;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: var(--weight-bold);
+    font-family: var(--ff-MontaguSlab);
   }
 
   .cadastre {
-    color: #004d00;
+    color: var(--Verde-Mata-Densa);
     margin: 10px 0;
     display: block;
     text-decoration: none;
     font-weight: bold;
+    font-family: var(--ff-MontaguSlab);
   }
   
   .button {
@@ -83,9 +188,10 @@
     padding: 10px;
     border: none;
     border-radius: 30px;
-    background: linear-gradient(90deg, #3e7430 37.5%, rgba(42, 70, 35, 0.88) 100%);
-    color: white;
-    font-weight: bold;
+    background:var(--gradiente-sertão);
+    color:var(--Branco);
+    font-weight: var(--weight-semibold);
+    font-family: var(--ff-Montserrat);
     cursor: pointer;
     transition: background 0.3s ease;
   }
@@ -98,7 +204,7 @@
     display: flex;
     align-items: center;
     text-align: center;
-    color: #004d00;
+    color: var(--Verde-Mata-Densa);
     font-weight: bold;
     margin-top: 20px;
   }
@@ -107,11 +213,12 @@
   .linha-com-texto::after {
     content: '';
     flex: 1;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--Preto);
     margin: 0 10px;
   }
 
   .back {
     text-decoration: none;
   }
+  
   
