@@ -162,6 +162,22 @@
   .principal {
     background-color: #91be91;
     border-radius: 20px;
+    background: #337D1E;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.74);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 4px
+}
+
+.principal img {
+    border-radius: 15px;
+    height: 30px;
+    height: 250px;
+    padding: 8px;
+    justify-content: center;
+}
+
+.principal h3 {
     padding: 40px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     display: flex;
